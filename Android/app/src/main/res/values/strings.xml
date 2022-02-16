@@ -12,4 +12,10 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment_format">Hello second fragment. Arg: %1$s</string>
     <string name="hello_second_fragment">This is the Second fragment!</string>
+    <string name="splash_screen_details">
+        This is a full-screen activity that hides the native system Navigation Bar.
+        As a general rule of thumb, you should provide the user an alternative option to navigate,
+        such as a back button, or an \'Exit App\' function.</string>
+    <string name="splash_screen_message">Splash Screen</string>
+    <string name="skip_timer">Skip Timer</string>
 </resources>

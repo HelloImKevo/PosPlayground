@@ -1,10 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/splash_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splash_bg"
+    android:background="@color/gray_slate"
     android:orientation="vertical"
     android:theme="@style/Theme.PosPlayground.Splash"
-    tools:ignore="Overdraw" />
+    tools:ignore="Overdraw">
+
+    <LinearLayout
+        android:id="@+id/text_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/TextView.Label"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="@string/splash_screen_message"
+            android:textColor="@color/white_cocaine"
+            android:textSize="@dimen/text_size_extra_large" />
+
+        <TextView
+            style="@style/TextView.Label"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:gravity="center_horizontal"
+            android:text="@string/splash_screen_details"
+            android:textColor="@color/white_tea" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_skip_timer"
+        style="@style/Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_extra_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:text="@string/skip_timer"
+        app:layout_constraintTop_toBottomOf="@id/text_container" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

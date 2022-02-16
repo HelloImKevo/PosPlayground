@@ -1,21 +1,20 @@
 package com.kevo.posplayground.ui
 
-import android.app.Activity
 import android.content.Intent
 import android.os.AsyncTask
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
-import android.widget.LinearLayout
 import com.kevo.posplayground.MainActivity
 import com.kevo.posplayground.R
 import java.lang.ref.WeakReference
 
-class ActivitySplashScreen : Activity(), View.OnClickListener {
+class ActivitySplashScreen : BaseActivity() {
 
     companion object {
-        private const val SPLASH_TIME: Long = 6 * 1000L
+        private const val SPLASH_TIME: Long = 12 * 1000L
 
         /**
          * A simple `AsyncTask` extension that sleeps for a brief period, and then
@@ -53,7 +52,6 @@ class ActivitySplashScreen : Activity(), View.OnClickListener {
         }
     }
 
-    private lateinit var splashLayout: LinearLayout
     private lateinit var splashScreenDurationTask: AsyncTask<Void?, Void?, Void?>
 
     public override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,15 +62,15 @@ class ActivitySplashScreen : Activity(), View.OnClickListener {
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
         window?.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
-        val decorView = window?.decorView
-        val uiOptions = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN)
-        decorView?.systemUiVisibility = uiOptions
-
-        //actionBar?.hide()
         setContentView(R.layout.activity_splash_screen)
 
-        splashLayout = findViewById<View>(R.id.splash_layout) as LinearLayout
-        splashLayout.setOnClickListener(this)
+        hideSystemNavigationBar()
+        registerSystemUiListener()
+
+        findViewById<View>(R.id.btn_skip_timer).setOnClickListener {
+            splashScreenDurationTask.cancel(true)
+            endSplashScreen()
+        }
 
         splashScreenDurationTask = SleepAsyncTask(this)
             .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR)
@@ -83,9 +81,21 @@ class ActivitySplashScreen : Activity(), View.OnClickListener {
         System.gc()
     }
 
-    override fun onClick(v: View?) {
-        splashScreenDurationTask.cancel(true)
-        endSplashScreen()
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && hasFocus) {
+            window.decorView.systemUiVisibility = hideSystemNavigationBarFlags
+        }
+    }
+
+    private fun registerSystemUiListener() {
+        window.decorView.setOnSystemUiVisibilityChangeListener { visibility ->
+            // Note that system bars will only be "visible" if none of the
+            // LOW_PROFILE, HIDE_NAVIGATION, or FULLSCREEN flags are set.
+            if (visibility and View.SYSTEM_UI_FLAG_FULLSCREEN == 0) {
+                hideSystemNavigationBar()
+            }
+        }
     }
 
     private fun endSplashScreen() {
