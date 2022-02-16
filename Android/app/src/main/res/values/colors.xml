@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Text -->
+    <color name="primary_text">@android:color/white</color>
+    <color name="secondary_text">#ECF0F1</color> <!-- Clouds -->
+    <color name="tertiary_text">#E67E22</color> <!-- Carrot -->
+    <color name="orange_text">#E27324</color>
+    <color name="hint_text">#CC858585</color>
+    <color name="red_text">#FF0000</color>
+
+    <color name="rarity_yellow">#FFA200</color>
+    <color name="rarity_green">#2ECC71</color>
+    <color name="rarity_white">#FFFFFF</color>
+    <color name="rarity_red">#C0392B</color>
+    <color name="rarity_purple">#8E44AD</color>
+    <color name="rarity_orange">#D35400</color>
+
+    <!-- Buttons -->
+    <color name="button_blue_normal">#3496DB</color> <!-- Peter River -->
+    <color name="button_blue_pressed">#2980B9</color> <!-- Belize Hole -->
+    <color name="button_blue_disabled">#AA2980B9</color>
+    <color name="button_red_normal">#E74C3C</color> <!-- Alizarin -->
+    <color name="button_red_pressed">#C0392B</color> <!-- Pomegranate -->
+    <color name="button_red_disabled">#AAC0392B</color>
+
+    <string-array name="attr_rarity_colors">
+        <item>#2980B9</item> <!-- Belize Hole -->
+        <item>#8E44AD</item> <!-- Wisteria -->
+        <item>#C0392B</item> <!-- Pomegranate -->
+        <item>#7F8C8D</item> <!-- Asbestos -->
+        <item>#2ECC71</item> <!-- Emerald -->
+        <item>#D35400</item> <!-- Pumpkin -->
+    </string-array>
+
+    <!-- Flat UI Colors -->
+    <color name="peter_river">#3496DB</color>
+    <color name="belize_hole">#2980B9</color>
+    <color name="wet_asphalt">#34495E</color>
+    <color name="emerald">#2ECC71</color>
+    <color name="clouds">#ECF0F1</color>
+    <color name="carrot">#E67E22</color>
+    <color name="pomegranate">#C0392B</color>
+    <color name="alizarin">#E74C3C</color>
+    <color name="wisteria">#8E44AD</color>
+    <color name="asbestos">#7F8C8D</color>
+    <color name="pumpkin">#D35400</color>
+</resources>
