@@ -12,9 +12,11 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <!-- Disable activity transition animations. -->
+        <item name="android:windowAnimationStyle">@null</item>
     </style>
 
+    <!-- Replace the top Action Bar with our own Support Action Bar implementation. -->
     <style name="Theme.PosPlayground.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

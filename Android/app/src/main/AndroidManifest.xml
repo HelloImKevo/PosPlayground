@@ -12,6 +12,7 @@
 
         <activity
             android:name=".ui.SplashScreenActivity"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.PosPlayground.Fullscreen">
 
@@ -31,6 +32,12 @@
             android:name=".ui.CardAcquisitionScreen"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.PosPlayground.Fullscreen" />
+
+        <activity
+            android:name=".ui.NavigationBarOverrideScreen"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PosPlayground.NoActionBar" />
 
         <activity
             android:name=".ui.FragmentDemoActivity"

@@ -18,6 +18,10 @@ class MainLaunchActivity : BaseActivity() {
             startActivity(Intent(this, CardAcquisitionScreen::class.java))
         }
 
+        findViewById<View>(R.id.btn_navigation_bar_override_screen).setOnClickListener {
+            startActivity(Intent(this, NavigationBarOverrideScreen::class.java))
+        }
+
         findViewById<View>(R.id.btn_fragment_demo).setOnClickListener {
             startActivity(Intent(this, FragmentDemoActivity::class.java))
         }

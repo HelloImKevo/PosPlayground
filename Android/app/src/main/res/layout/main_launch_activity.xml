@@ -62,6 +62,22 @@
             android:textColor="@color/gray_silver" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_navigation_bar_override_screen"
+            style="@style/Button.Blue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/navigation_bar_override" />
+
+        <TextView
+            style="@style/TextView.Label"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_extra_small"
+            android:gravity="center_horizontal"
+            android:text="@string/navigation_bar_override_details"
+            android:textColor="@color/gray_silver" />
+
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_fragment_demo"
             style="@style/Button.Red"
             android:layout_width="match_parent"

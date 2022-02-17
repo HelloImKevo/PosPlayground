@@ -25,4 +25,16 @@
     <string name="card_acquisition_immersive_details">
         This screen prompts the user to present their card and utilizes the full-screen
         immersive option (which hides the system Navigation Bar).</string>
+    <string name="navigation_bar_override">Navigation Bar Override</string>
+    <string name="navigation_bar_override_details">
+        This screen overrides the native behavior of the system Navigation Bar Home,
+        Back and Recent Apps buttons.</string>
+    <string name="navigation_override_screen_instructions">
+        The native behavior for the Back, Home and Recent Apps buttons has been changed.
+        Click on the system Navigation Bar buttons to see what happens.</string>
+    <string name="navigation_override_back_button_message">
+        On Back Click: I\'m sorry Dave, I\'m afraid I can\'t do that.</string>
+    <string name="navigation_override_home_or_recent_apps_button_message">
+        On Home / Recent Apps Click: I\'ll be back in just a moment, just watch!</string>
+    <string name="go_back">Go Back</string>
 </resources>
