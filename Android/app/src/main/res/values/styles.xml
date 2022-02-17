@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <!-- TextViews -->
     <style name="TextView.Label" parent="android:TextAppearance.Widget.TextView">
         <item name="android:layout_width">wrap_content</item>
@@ -8,14 +9,29 @@
         <item name="android:textSize">@dimen/text_size_medium</item>
     </style>
 
+    <style name="TextView.Label.Bold" parent="@style/TextView.Label">
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <!-- Base Button Style -->
-    <style name="Button" parent="@android:style/Widget.Button">
+    <style name="Button" parent="android:Widget.Button">
         <item name="android:gravity">center</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:textSize">@dimen/text_size_medium</item>
         <item name="android:textColor">@color/button_text_selector_inverse</item>
         <item name="android:textStyle">bold</item>
         <item name="android:minHeight">48dp</item>
+    </style>
+
+    <style name="Button.Blue" parent="@style/Button">
         <item name="android:background">@drawable/button_blue_rounded</item>
+    </style>
+
+    <style name="Button.Red" parent="@style/Button">
+        <item name="android:background">@drawable/button_red_rounded</item>
+    </style>
+
+    <style name="Button.Green" parent="@style/Button">
+        <item name="android:background">@drawable/button_green_rounded</item>
     </style>
 </resources>

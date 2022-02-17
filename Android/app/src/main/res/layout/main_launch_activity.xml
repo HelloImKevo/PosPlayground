@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/splash_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_slate"
+    android:orientation="vertical"
+    android:theme="@style/Theme.PosPlayground.Fullscreen"
+    tools:ignore="Overdraw">
+
+    <LinearLayout
+        android:id="@+id/text_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/TextView.Label.Bold"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="@string/main_launch_screen"
+            android:textColor="@color/white_cocaine"
+            android:textSize="@dimen/text_size_large" />
+
+        <TextView
+            style="@style/TextView.Label"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_small"
+            android:gravity="center_horizontal"
+            android:text="@string/main_launch_screen_instructions"
+            android:textColor="@color/white_tea" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_extra_large"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/text_container">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_card_acquisition_screen"
+            style="@style/Button.Green"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/card_acquisition_immersive" />
+
+        <TextView
+            style="@style/TextView.Label"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_extra_small"
+            android:gravity="center_horizontal"
+            android:text="@string/card_acquisition_immersive_details"
+            android:textColor="@color/gray_silver" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_fragment_demo"
+            style="@style/Button.Red"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="Fragment Demo" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,11 +7,10 @@ import android.os.Bundle
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
-import com.kevo.posplayground.MainActivity
 import com.kevo.posplayground.R
 import java.lang.ref.WeakReference
 
-class ActivitySplashScreen : BaseActivity() {
+class SplashScreenActivity : BaseActivity() {
 
     companion object {
         private const val SPLASH_TIME: Long = 12 * 1000L
@@ -26,10 +25,10 @@ class ActivitySplashScreen : BaseActivity() {
          * finish the activity, once the sleep time is elapsed.
          */
         class SleepAsyncTask internal constructor(
-            activity: ActivitySplashScreen
+            activity: SplashScreenActivity
         ) : AsyncTask<Void?, Void?, Void?>() {
 
-            private val activityRef: WeakReference<ActivitySplashScreen> =
+            private val activityRef: WeakReference<SplashScreenActivity> =
                 WeakReference(activity)
 
             override fun doInBackground(vararg params: Void?): Void? {
@@ -62,10 +61,10 @@ class ActivitySplashScreen : BaseActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
         window?.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
-        setContentView(R.layout.activity_splash_screen)
+        setContentView(R.layout.splash_screen_activity)
 
         hideSystemNavigationBar()
-        registerSystemUiListener()
+        registerHideSystemUiListener()
 
         findViewById<View>(R.id.btn_skip_timer).setOnClickListener {
             splashScreenDurationTask.cancel(true)
@@ -88,20 +87,10 @@ class ActivitySplashScreen : BaseActivity() {
         }
     }
 
-    private fun registerSystemUiListener() {
-        window.decorView.setOnSystemUiVisibilityChangeListener { visibility ->
-            // Note that system bars will only be "visible" if none of the
-            // LOW_PROFILE, HIDE_NAVIGATION, or FULLSCREEN flags are set.
-            if (visibility and View.SYSTEM_UI_FLAG_FULLSCREEN == 0) {
-                hideSystemNavigationBar()
-            }
-        }
-    }
-
     private fun endSplashScreen() {
         if (isFinishing) return
 
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this, MainLaunchActivity::class.java))
         finish()
     }
 }

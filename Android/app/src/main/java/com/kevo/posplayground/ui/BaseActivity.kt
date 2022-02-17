@@ -1,14 +1,14 @@
 package com.kevo.posplayground.ui
 
-import android.app.Activity
 import android.os.Build
 import android.view.View
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 
-abstract class BaseActivity : Activity() {
+abstract class BaseActivity : AppCompatActivity() {
 
     protected val hideSystemNavigationBarFlags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
             View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or
@@ -45,6 +45,16 @@ abstract class BaseActivity : Activity() {
             // appear for some time.
             controller.systemBarsBehavior =
                 WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        }
+    }
+
+    protected fun registerHideSystemUiListener() {
+        window.decorView.setOnSystemUiVisibilityChangeListener { visibility ->
+            // Note that system bars will only be "visible" if none of the
+            // LOW_PROFILE, HIDE_NAVIGATION, or FULLSCREEN flags are set.
+            if (visibility and View.SYSTEM_UI_FLAG_FULLSCREEN == 0) {
+                hideSystemNavigationBar()
+            }
         }
     }
 }

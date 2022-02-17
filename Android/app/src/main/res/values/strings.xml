@@ -18,4 +18,11 @@
         such as a back button, or an \'Exit App\' function.</string>
     <string name="splash_screen_message">Splash Screen</string>
     <string name="skip_timer">Skip Timer</string>
+    <string name="main_launch_screen">Main Launch Screen</string>
+    <string name="main_launch_screen_instructions">
+        Click one of the buttons below to navigate to a new screen.</string>
+    <string name="card_acquisition_immersive">Card Acquisition (Immersive)</string>
+    <string name="card_acquisition_immersive_details">
+        This screen prompts the user to present their card and utilizes the full-screen
+        immersive option (which hides the system Navigation Bar).</string>
 </resources>

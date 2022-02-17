@@ -11,9 +11,9 @@
         android:theme="@style/Theme.PosPlayground">
 
         <activity
-            android:name=".ui.ActivitySplashScreen"
+            android:name=".ui.SplashScreenActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.PosPlayground.Splash">
+            android:theme="@style/Theme.PosPlayground.Fullscreen">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,17 @@
         </activity>
 
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainLaunchActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PosPlayground.NoActionBar" />
+
+        <activity
+            android:name=".ui.CardAcquisitionScreen"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PosPlayground.Fullscreen" />
+
+        <activity
+            android:name=".ui.FragmentDemoActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.PosPlayground.NoActionBar" />
     </application>
